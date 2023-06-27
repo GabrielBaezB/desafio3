@@ -1,24 +1,27 @@
-# README
+rails new <name proyecto> --database=postgresql
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Generamos un modelo llamado Post que tendrá los campos title y content.
+rails g rails g model Post title content
 
-Things you may want to cover:
+sudo -u postgres psql
+create database railsdb;
+create user userdb with password 'ror2023';
+grant all privileges on database railsdb to userdb;
+alter user userdb createdb;
+\q para salir
 
-* Ruby version
+rails g migration addAgeToUser age:integer
 
-* System dependencies
+rails db:create
+rails db:migrate
+rails db:migrate:status
 
-* Configuration
+sudo -u postgres psql
+\c railsdb
+\dt para listar las tablas
+select * from users;
 
-* Database creation
+rails console
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+User.all
+User.create(name:'Gabriel', age: 32)
