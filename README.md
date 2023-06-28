@@ -13,9 +13,9 @@ alter user userdb createdb;
 rails new <name proyecto> --database=postgresql
 
 Generamos los modelo llamado Movie, Serie y DocumentaryFilm que tendrá los campos name, synopsis y director.
-rails generate model Movie name:string synopsis:string director:string  
-rails generate model Serie name:string synopsis:string director:string  
-rails generate model DocumentaryFilm name:string synopsis:string director:string  
+> rails generate model Movie name:string synopsis:string director:string  
+> rails generate model Serie name:string synopsis:string director:string  
+> rails generate model DocumentaryFilm name:string synopsis:string director:string  
 
 Generamos los controladores Movies, Series y DocumentaryFilms
 rails generate controller Movies index create new
