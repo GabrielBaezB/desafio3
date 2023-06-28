@@ -1,26 +1,25 @@
 class SeriesController < ApplicationController
   def index
-    @series = Series.all
+    @series = Serie.all
   end
 
   def create
-    @series = Series.new(series_params)
+    @series = Serie.new(series_params)
 
     if @series.save
-      redirect_to series_path
+      redirect_to series_index_path, notice: 'Serie created successfully.'
     else
       render :new
     end
   end
 
   def new
-    @series = Series.new
+    @series = Serie.new
   end
 
   private
 
   def series_params
-    params.require(:series).permit(:name, :synopsis, :director)
+    params.require(:serie).permit(:name, :synopsis, :director)
   end
 end
-  
