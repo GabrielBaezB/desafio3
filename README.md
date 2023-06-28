@@ -1,8 +1,13 @@
 sudo -u postgres psql
+
 create database desafio3db;
+
 create user userdb with password 'ror2023';
+
 grant all privileges on database railsdb to userdb;
+
 alter user userdb createdb;
+
 \q para salir
 
 rails new <name proyecto> --database=postgresql
