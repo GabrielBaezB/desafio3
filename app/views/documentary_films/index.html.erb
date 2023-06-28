@@ -1,7 +1,17 @@
 <h1>Documentary Films</h1>
-
-<% @documentary_films.each do |documentary_film| %>
-  <h3><%= documentary_film.name %></h3>
-  <p>Synopsis: <%= documentary_film.synopsis %></p>
-  <p>Director: <%= documentary_film.director %></p>
-<% end %>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @documentary_films.each do |documentary_film| %>
+    <div class="col">
+      <div class="card h-100">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= documentary_film.name %></h5>
+          <p class="card-text"><%= documentary_film.synopsis %></p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Director:</strong> <%= documentary_film.director %></small>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>

@@ -1,8 +1,18 @@
 <h1>Movies</h1>
 
+<div class="row row-cols-1 row-cols-md-3 g-4">
 <% @movies.each do |movie| %>
-  <h3><%= movie.name %></h3>
-  <p>Synopsis: <%= movie.synopsis %></p>
-  <p>Director: <%= movie.director %></p>
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= movie.name %></h5>
+        <p class="card-text"><%= movie.synopsis %></p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Director:</strong> <%= movie.director %></small>
+      </div>
+    </div>
+  </div>
 <% end %>
-
+</div>
