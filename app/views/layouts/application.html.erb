@@ -6,11 +6,56 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag "application", "data-turbo-track" => "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <%= link_to "HOME", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="seriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Series
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="seriesDropdown">
+            <li><%= link_to "Ver Series", series_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Nueva Serie", new_serie_path, class: "dropdown-item" %></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="moviesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Movies
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="moviesDropdown">
+            <li><%= link_to "Ver Movies", movies_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Nueva Movie", new_movie_path, class: "dropdown-item" %></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="documentaryFilmsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Documentary Films
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="documentaryFilmsDropdown">
+            <li><%= link_to "Ver Documentary Films", documentary_films_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Nuevo Documentary Film", new_documentary_film_path, class: "dropdown-item" %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+<%= yield %>
+    </div>
+
   </body>
 </html>
